@@ -1,11 +1,12 @@
 #include<iostream>
 using namespace std;
-
-/*int main()
+/*
+int main()
 {
     cout << "Strange";
     return 0;
 }
+
 int main()
 {
     int cp,sp,p;
@@ -18,7 +19,7 @@ int main()
     p=(float(p)/float(cp))*100;
     cout<<"\nProfit %:"<<p;
     return 0;
-}*/
+}
 
 int main()
 {
@@ -36,4 +37,20 @@ int main()
         cout<<"Invalid number";
     return 0;
 
+}
+*/
+int main()
+{
+    int num1;
+    cout<< "enter a number:"<<endl;
+    cin>>num1;
+    if (num1>50)
+    {
+        cout<< "The number is greater than 50";
+    }
+    else
+    {
+        cout<< "the number is not greater than 50";
+    }
+    return 0;
 }
