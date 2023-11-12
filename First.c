@@ -1137,7 +1137,7 @@ void main()
     printf("%s\n",s3);
     puts(s3);
 }
-
+*/
 void main()
 {
     char s1[30];
@@ -1151,7 +1151,7 @@ void main()
     printf("\n%s",&s1[3]); //it will print from 3rd index to the full string
     //printf("\n%s",s1[3]); //wrong
 }
-
+/*
 void main()
 {
     char s1[30];
