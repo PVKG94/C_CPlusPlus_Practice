@@ -216,9 +216,9 @@ int main()
     cin>>num1;
     while (num1!=0)  // num1>0
     {
-        rm=(num1%10);
+        rm=num1%10;
         rev=rev+rm;
-        rev=rev*10;
+        rev=rev*10;  //rev=(rev*10)+rm
         num1/=10;
     }
     cout<<rev/10;
@@ -330,7 +330,7 @@ int main()
     if (sum==num)
         cout<< "its a armstrong number";
     else
-        cout<< "its not a armsstrong number";
+        cout<< "its not a armstrong number";
     return 0;
 }
 
@@ -364,5 +364,272 @@ int fact(int n1)
     }
     return a;
 }
+
+//toggle each character in a string
+int main()
+{
+    string name;
+    cout<< "enter a string to toggle:";
+    cin>>name;
+    for (int i=0;name[i]!='\0';i++)
+    {
+        if (name[i]>=97 && name[i]<=122)
+            name[i]=name[i]-32;
+        else if (name[i]>=65 && name[i]<=90)
+            name[i]=name[i]+32;
+    }
+    cout<<name<<endl;
+    return 0;
+}
+
+int main()
+{
+    int size;
+    string name;
+    cout<< "enter a string:";
+    cin>>name;
+    size=name.length();
+    for (int i=0;i<size;i++)
+        if (islower(name[i]))
+            name[i]=toupper(name[i]);
+        else
+            name[i]=tolower(name[i]);
+    cout<<name;
+    return 0;
+}
+
+//reverse a string
+int main()
+{
+    string name;
+    cout<< "enter a string:";
+    cin>>name;
+    int l=name.length();
+    for (int i=l-1;i>=0;i--)
+    {
+        cout<<name[i];
+    }
+    return 0;
+}
+
+int main()
+{
+    string name;
+    cout<< "enter a string:";
+    cin>>name;
+    int l=name.length();
+    for (int i=0;i<l/2;i++)
+    {
+        char ch=name[i];
+        name[i]=name[l-1-i];
+        name[l-1-i]=ch;
+    }
+    cout<<name;
+    return 0;
+}
+
+int main()
+{
+    string name;
+    cout<< "enter a string:";
+    cin>>name;
+    int l=name.length();
+    int i=0,j=l-1;
+    while (i<j)
+    {
+        char ch=name[i];
+        name[i]=name[j];
+        name[j]=ch;
+        i++;
+        j--;
+    }
+    cout<<name;
+    return 0;
+}
+
+//Palindrome or not
+int main()
+{
+    string name;
+    cout<< "enter a string:";
+    cin>>name;
+    int l=name.length();
+    int i=0,j=l-1;
+    int flag=0;
+    while (i<j)
+    {
+        if (name[i]==name[j])
+        {
+            i++;
+            j--;
+            flag=1;
+        }
+        else
+        {
+            break;
+        }
+    if (flag==1)
+    {
+        cout<< "its a palindrome";
+    }
+    else
+    {
+        cout<< "not a palindrome"
+    }
+    return 0;
+}
+
+//Sum of numbers in a string
+int main()
+{
+    string name;
+    cout<< "enter a string:";
+    cin>>name;
+    int i,l=name.size(),sum=0;
+    for (i=0;i<l;i++)
+    {
+        if (name[i]>='0' && name[i]<='9')
+        {
+            sum=sum+(name[i]-48); //48 or '0'
+        }
+    }
+    cout<<sum;
+    return 0;
+}
+
+//Palindrome number
+int main()
+{
+    int num,num1,rm,rev=0;
+    cout << "enter a number:";
+    cin>>num;
+    num1=num;
+    while (num>0)
+    {
+        rm=num%10;
+        rev=(rev*10)+rm;
+        num=num/10;
+    }
+    if (rev==num1)
+        cout<<"palindrome";
+    else
+        cout<<"not a palindrome";
+    return 0;
+}
+
+//count uppercase letters in string
+int main()
+{
+    string name;
+    cout<< "enter a string:";
+    cin>>name;
+    int l=name.length();
+    int i,count=0;
+    for (i=0;i<l;i++)
+    {
+        if (name[i]>='A' && name[i]<='Z')
+        {
+            count++;
+        }
+    }
+    cout<<count;
+    return 0;
+}
+
+//reverse a array in place
+int main()
+{
+    int arr1[5]={2,4,5,1,8};
+    int l=sizeof(arr1)/sizeof(arr1[0]);
+    for (int i=0;i<l/2;i++)
+    {
+        int temp=arr1[i];
+        arr1[i]=arr1[l-1-i];
+        arr1[l-1-i]=temp;
+    }
+    for (int i=0;i<l;i++)
+    {
+        cout<<arr1[i];
+    }
+    return 0;
+}
+
+//search an element in a array
+int main()
+{
+    int size,target;
+    cout<< "enter the size of the array and the target number:";
+    cin>>size>>target;
+    int arr1[size];
+    cout<< "enter the array elements:";
+    int ans=-1;
+    for (int i=0;i<size;i++)
+    {
+        cin>>arr1[i];
+    }
+    for (int i=0;i<size;i++)
+    {
+        if (target==arr1[i])
+        {
+            ans=i;
+            break;
+        }
+    }
+    cout<<endl<<ans;
+    return 0;
+}
+
+//sum of elements in an array
+int main()
+{
+    int arr1[5]={3,5,7,3,1};
+    int sum=0,i;
+    for (i=0;i<5;i++)
+    {
+        sum+=arr1[i];
+    }
+    cout<<sum;
+    return 0;
+}
+
+//sum of positive elements in an array
+int main()
+{
+    int arr1[5]={3,5,-7,3,-1};
+    int sum=0,i;
+    for (i=0;i<5;i++)
+    {
+        if (arr1[i]>=0)
+            sum+=arr1[i];
+    }
+    cout<<sum;
+    return 0;
+}
+
+//sorting elements in an array
+int main()
+{
+    int arr[6]={3,5,0,1,4,8},tmp;
+    for (int i=0;i<6;i++)
+    {
+        for (int j=i+1;j<6;j++)
+        {
+            if (arr[i]>arr[j])
+            {
+                //swap(arr[i],arr[j]);
+                tmp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=tmp;
+            }
+        }
+    }
+    for (int i=0;i<6;i++)
+    {
+        cout<<arr[i];
+    }
+    return 0;
+}
 */
-//
+//large element in an array
+//after sorting the last element
+
