@@ -1114,7 +1114,7 @@ void main()
     char s1[10],s2[10];
     printf("enter a name:");
     scanf("%s %s",s1,s2);
-    printf("%s%s",s1,s2);
+    printf("%s %s",s1,s2);
 }
 
 void main()

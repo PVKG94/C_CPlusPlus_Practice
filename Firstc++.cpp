@@ -446,7 +446,7 @@ int main()
     cout<<name;
     return 0;
 }
-
+//madam,level
 //Palindrome or not
 int main()
 {
@@ -633,3 +633,24 @@ int main()
 //large element in an array
 //after sorting the last element
 
+//0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233
+int main()
+{
+    int n=10,n1=0,n2=1,num;
+    for (int i=1;i<=10;i++)
+    {
+        if (i==1)
+        {
+            cout << n1<<"";
+        }
+        if (i==2)
+        {
+            cout << n2<<"";
+        }
+        num=n1+n2;
+        n1=n2;
+        n2=num;
+        cout << num<<"";
+    }
+    return 0;
+}
